@@ -1,8 +1,34 @@
 <resources>
-    <string name="app_name">Mannu&amp;Doug</string>
+    <!--A-->
+    <string name="app_name">#Nosso19</string>
+    <string name="apps_need_maps">Instale o Google Maps ou algum navegador para poder visualizar a rota!</string>
+
+    <!--C-->
+    <string name="church_description">Cerimônia Religiosa</string>
+    <string name="church">Igreja Bom Jesus do Cabral</string>
+    <string name="confirmar">Presença</string>
+
+    <!--M-->
+    <string name="mapas">Mapas</string>
+    <!--N-->
+    <string name="navegar_destino">NAVEGAR</string>
+    <!--P-->
+    <string name="presentes">Presentes</string>
+
+    <!--S-->
+    <string name="sallon_description">Cerimônia civíl e Recepção dos Convidados</string>
+    <string name="sallon">Jockey Club do Paraná - Salão Bento Munhoz</string>
+
+    <!--T-->
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="mapas">Mapas</string>
-    <string name="presentes">Presentes</string>
+    <string name="title_activity_second">SecondActivity</string>
+
+
+
+
+
+
+
 </resources>

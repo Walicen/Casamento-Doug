@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.HomeFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:scrollingCache="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical"
+            android:paddingTop="5dp">
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageCasal"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:contentDescription="TODO"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/casal1"/>
+
+                    <cn.iwgang.countdownview.CountdownView
+                        android:id="@+id/cv_countDownView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        app:isShowDay="true"
+                        app:isShowHour="true"
+                        app:isShowMinute="true"
+                        app:isShowSecond="true"
+                        app:isShowMillisecond="false"
+                        app:suffixGravity="bottom"
+                        app:suffixDay="Dias"
+                        app:suffixHour="H"
+                        app:suffixMinute="Min"
+                        app:suffixSecond="Sec"
+                        app:suffixMinuteLeftMargin="5dp"
+                        app:suffixMinuteRightMargin="10dp"
+                        app:suffixSecondLeftMargin="5dp"
+                        app:suffixTextColor="#444444"
+                        app:suffixTextSize="14sp"
+                        app:timeTextColor="#444444"
+                        app:timeTextSize="60sp"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</FrameLayout>

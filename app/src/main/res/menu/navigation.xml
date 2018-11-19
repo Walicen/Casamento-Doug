@@ -16,4 +16,11 @@
         android:icon="@drawable/ic_favorite_black_24dp"
         android:title="@string/presentes" />
 
+    <item
+        android:id="@+id/navigation_confirma_presenca"
+        android:icon="@drawable/ic_confirm"
+        android:title="@string/confirmar" />
+
+
+
 </menu>
