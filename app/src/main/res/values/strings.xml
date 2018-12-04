@@ -24,11 +24,8 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_second">SecondActivity</string>
-
-
-
-
-
+    <string name="imagem">Imagem do Casal</string>
+    <string name="key_fazer_cache">cache</string>
 
 
 </resources>

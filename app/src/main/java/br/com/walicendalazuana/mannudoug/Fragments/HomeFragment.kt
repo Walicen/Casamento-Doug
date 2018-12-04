@@ -48,7 +48,7 @@ class HomeFragment : BaseFragment() {
         cv_countDownView.start(time)
     }
 
-    public fun getDaysMissing(): Long {
+    fun getDaysMissing(): Long {
 
         val hoje = Calendar.getInstance()
         val casamento = Calendar.getInstance()

@@ -3,12 +3,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "br.com.walicendalazuana.mannudoug"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -48,5 +49,10 @@ dependencies {
     //CountDownView
     implementation 'com.github.iwgang:countdownview:2.1.6'
 
+    // Multidex (https://developer.android.com/studio/build/multidex.html?hl=pt-br)
+    implementation 'com.android.support:multidex:1.0.3'
 
+
+    implementation 'com.google.firebase:firebase-core:16.0.5'
+    implementation 'com.google.firebase:firebase-firestore:17.1.3'
 }

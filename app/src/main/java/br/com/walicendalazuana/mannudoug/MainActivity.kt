@@ -17,8 +17,12 @@ import br.com.walicendalazuana.mannudoug.Fragments.ConfirmationFragment
 import br.com.walicendalazuana.mannudoug.Fragments.HomeFragment
 import br.com.walicendalazuana.mannudoug.Fragments.MapsFragment
 import br.com.walicendalazuana.mannudoug.Fragments.PresentesFragment
+import br.com.walicendalazuana.mannudoug.Model.Convidado
 import br.com.walicendalazuana.mannudoug.R.string.presentes
+import br.com.walicendalazuana.mannudoug.Utils.Prefs
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_confirmation.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
@@ -64,17 +68,18 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         switchFragment(HomeFragment.newInstance())
 
-//        button.setOnClickListener {  }
-//        getDaysMissing()
-
 
     }
 
+    fun salvar_presenca_firebase(convidado: Convidado) {
 
+        val db = FirebaseFirestore.getInstance()
+        val refPresenca = db.collection("presenca").document()
 
+        refPresenca.set(convidado)
+    }
 
-
-    private fun showDialogContagem() {
+    fun showDialogConfirmacao() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE) // before
         dialog.setContentView(R.layout.dialog_contagem)
@@ -83,23 +88,37 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         dialog.show()
     }
 
+    fun confirmacao_presenca(view: View) {
 
-    public fun getDaysMissing() {
+        val nome = edt_nome.text.toString()
+        val email = edt_email.text.toString()
 
-        val hoje = Calendar.getInstance()
-        val casamento = Calendar.getInstance()
-        casamento.set(2019, Calendar.JANUARY, 19)
-        hoje.time
+        if (nome.length > 5) {
+            if (validar_email(email)) {
+                val conv = Convidado(nome, email)
 
-        val hojeInMillis = hoje.timeInMillis
-        val casamentoInMillis = casamento.timeInMillis
-
-        val diff = casamentoInMillis - hojeInMillis
-
+                Prefs.putString("PRESENCA", "CONFIRMADA")
+                Prefs.putString("NOME", nome)
+                Prefs.putString("EMAIL", email)
+                salvar_presenca_firebase(conv)
+                toast("Sua presença foi confirmada $nome - $email!")
+                switchFragment(ConfirmationFragment.newInstance())
+            } else {
+                toast("Por favor digite um email válido!")
+            }
+        } else {
+            toast("É impossivel que seu Nome Completo não possua mais que 5 letras")
+        }
 
 
     }
 
+    fun validar_email(email: String): Boolean {
+        if (android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            return true
+        }
+        return false
+    }
 
     fun switchFragment(fragment: Fragment) {
 
@@ -173,7 +192,6 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
 
 
     }
-
 
 
 }

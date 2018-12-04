@@ -8,3 +8,5 @@ class Presente(var image: Int = 0,
                var title: String? = null,
                var brief: String? = null,
                var image_bg: Int = 0)
+
+data class Convidado(val nome:String, val email:String)
