@@ -26,6 +26,11 @@
     <string name="title_activity_second">SecondActivity</string>
     <string name="imagem">Imagem do Casal</string>
     <string name="key_fazer_cache">cache</string>
+    <string name="resumo_app">Aplicativo com a função única e exclusiva de facilitar a realização da cerimônia de casamento do Douglas &amp; Emnnuelly</string>
+    <string name="sobre">Sobre</string>
+    <string name="casamento_doug"><![CDATA[Casamento Mannu&Doug]]></string>
+    <string name="developer">Walicen Dalazuana</string>
+    <string name="twitter">\@walidalazuana</string>
 
 
 </resources>

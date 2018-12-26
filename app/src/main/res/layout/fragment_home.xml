@@ -21,15 +21,15 @@
             android:paddingTop="5dp">
 
             <android.support.v7.widget.CardView
-                app:cardCornerRadius="5dp"
-                app:cardElevation="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="5dp"
-                android:visibility="visible">
+                android:visibility="visible"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -40,9 +40,9 @@
                         android:id="@+id/imageCasal"
                         android:layout_width="match_parent"
                         android:layout_height="250dp"
+                        android:contentDescription="@string/imagem"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/casal1"
-                        android:contentDescription="@string/imagem" />
+                        android:src="@drawable/casal1" />
 
                     <cn.iwgang.countdownview.CountdownView
                         android:id="@+id/cv_countDownView"
@@ -50,29 +50,65 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
                         app:isShowDay="true"
                         app:isShowHour="true"
+                        app:isShowMillisecond="false"
                         app:isShowMinute="true"
                         app:isShowSecond="true"
-                        app:isShowMillisecond="false"
-                        app:suffixGravity="bottom"
-                        app:suffixDay="Dias"
-                        app:suffixHour="h"
-                        app:suffixMinute="Min"
-                        app:suffixSecond="Sec"
-                        app:suffixMinuteLeftMargin="5dp"
-                        app:suffixMinuteRightMargin="10dp"
-                        app:suffixSecondLeftMargin="5dp"
+                        app:suffix=" "
+                        app:suffixDayLeftMargin="30dp"
+                        app:suffixHourLeftMargin="30dp"
+                        app:suffixMinuteLeftMargin="30dp"
+                        app:suffixSecondLeftMargin="30dp"
                         app:suffixTextColor="#444444"
-                        app:suffixTextSize="14sp"
+                        app:suffixTextSize="10dp"
                         app:timeTextColor="#444444"
-                        app:timeTextSize="50sp"
-                        android:layout_marginBottom="10dp"/>
+                        app:timeTextSize="40sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="top|center"
+                        android:orientation="horizontal"
+                        android:padding="20dp"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Dias"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Horas"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Minutos"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Segundos"
+                            android:textAlignment="center" />
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
-
 
 
     </android.support.v4.widget.NestedScrollView>

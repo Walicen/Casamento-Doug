@@ -11,6 +11,8 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.Window
 import br.com.walicendalazuana.mannudoug.Fragments.ConfirmationFragment
@@ -26,6 +28,7 @@ import kotlinx.android.synthetic.main.fragment_confirmation.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import java.text.SimpleDateFormat
 import java.util.*
@@ -61,6 +64,20 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         false
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.about, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        if(item!!.itemId == R.id.action_about){
+            startActivity<AboutActivity>()
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -89,7 +106,6 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
     }
 
     fun confirmacao_presenca(view: View) {
-
         val nome = edt_nome.text.toString()
         val email = edt_email.text.toString()
 
@@ -121,14 +137,6 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
     }
 
     fun switchFragment(fragment: Fragment) {
-
-
-        /*
-         * Remove as pilhas de fragmentos para que não haja a
-         * possibilidade de navegação entre os itens do
-         * BottomNavigation, respeitando assim uma das regras
-         * de negócio deste componente.
-         * */
         supportFragmentManager
                 .popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
 
@@ -187,7 +195,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         } else {
-            toast(getString(R.string.apps_need_maps))?.show()
+            toast(getString(R.string.apps_need_maps)).show()
         }
 
 

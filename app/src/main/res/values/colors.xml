@@ -5,4 +5,8 @@
     <color name="colorAccent">#bfbf</color>
     <color name="colorButton">#467ecc</color>
     <color name="overlay_dark_30">#4D000000</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_90">#263238</color>
+    <color name="grey_5">#f2f2f2</color>
 </resources>
